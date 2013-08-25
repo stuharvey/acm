@@ -1,0 +1,214 @@
+/*
+ * Copyright 2013 ACM of Virginia Tech
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * VT Colors:
+ *
+ * Maroon (#660000)
+ * Orange (#FF6600)
+ */
+
+body {
+    background-color: #D3D3D3;
+    color: #000305;
+    font-size: 87.5%; /* Base font size is 14px */
+    font-family: Arial, 'Lucida Sans Unicode';
+    line-height: 1.5;
+    text-align: left;
+}
+
+a {
+    text-decoration: none; /* Remove default link styling */
+}
+
+.body {
+    margin: 0 auto; /* Center content */
+    width: 70%;
+    clear: both;
+}
+
+.header.main div {
+    overflow: hidden;
+}
+
+.header.main div img {
+    width: 30%;
+    height: auto;
+    margin: 2% 2% 2% 0;
+    float: left;
+}
+
+.header.main div h2 {
+    color: #FFFFFF;
+    margin: 2% auto;
+    padding: 0 5%;
+    border-bottom: 2px dotted #888888;
+}
+
+.header.main div h2 div {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.header.main aside {
+    background-color: #660000; /* VT Maroon */
+    overflow: hidden;
+    width: 68%;
+    height: auto%;
+    margin: 2% 0; /* Pad top/bottom */
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.header.main aside ul {
+    list-style: none;
+    line-height: 2;
+    margin: 2% auto;
+    padding: 0 5%;
+}
+
+.header.main aside ul li a:link,
+.header.main aside ul li a:visited
+{
+    color: #FFFFFF;
+}
+
+.header.main aside ul li a:hover, 
+.header.main aside ul li a:active
+{
+    color: #666666;
+    text-shadow: none;
+}
+    
+.header.main aside ul li a span {
+    color: #888888;
+}
+
+.header.main nav {
+    background-color: #660000; /* VT Maroon */
+    height: 40px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.header.main nav ul {
+    list-style: none; /* Remove bullets */
+    margin: 0 auto;
+}
+
+.header.main nav ul li {
+    float: left;
+    display: inline;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header.main nav a:link, .header.main nav a:visited {
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 10px 25px;
+    height: 20px;
+}
+
+.header.main nav a:hover, .header.main nav a:active, 
+.header.main nav .active a:link, .header.main nav .active a:visited {
+    background-color: #FF6600;
+    text-shadow: none;
+}
+
+.header.main nav ul li a {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.content.main {
+    line-height: 25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    overflow: hidden;
+}
+
+.content.post {
+    background-color: #F5F5EB;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top: 2%;
+    padding: 2% 3%;
+}
+
+.content.post a:link, a:visited {
+    color: #FF6600;    
+}
+
+.content.post a:hover, a:active {
+    color: #FFFFFF;
+    background-color: #FF6600;
+}
+
+.post-info {
+    font-style: italic;
+    color: #999999;
+    font-size: 90%;
+}
+
+.footer.main {
+    background-color: #666666;
+    color: #FFFFFF;
+    width: 96%;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 2% auto;
+    padding: 0 2%;
+}
+
+.footer.main p {
+    margin: 10px auto;
+}
+
+.footer.main a:link, .footer.main a:visited {
+    color: #FF6600;
+}
+
+.footer.main a:hover, .footer.main a:active {
+    background-color: #FF6600;
+    color: #FFFFFF;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 600px)
+{
+
+    body {
+        font-size: 95%;
+    }
+
+    .body {
+        width: 90%;
+    }
+
+    .header.main aside {
+        display: none;
+    }
+
+}
+
