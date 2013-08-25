@@ -24,6 +24,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- Attempt to load events -->
+        <script src="scripts/acm_datetime.js"></script>
         <script src="scripts/acm_calendar.js"></script>
         <script type="text/javascript">
             var updateEventType = function (newTitle) {
@@ -68,11 +69,12 @@
                             titleElement.innerHTML = "Events";
                         };
 
-                        dateElement.innerHTML = contents[i].dateTime;
+                        dateElement.innerHTML = contents[i].date;
                         contentElement.appendChild(dateElement);
 
                         contentElement.href = "#";
-                        contentElement.innerHTML += " - " + contents[i].summary;
+                        contentElement.innerHTML += " - " + contents[i].summary +
+                            ": " + contents[i].startTime + " to " + contents[i].endTime;
 
                         listElement.appendChild(contentElement);
                         listContainer.appendChild(listElement);

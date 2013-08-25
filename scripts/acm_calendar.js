@@ -2,7 +2,8 @@
  * Written by Chip Senkbeil.
  */
 var acmCalendar = (function (calendarId, apiKey) {
-    var restUrl = "https://www.googleapis.com/calendar/v3/calendars/" + calendarId + "/events?key=" + apiKey;
+    var restUrl = "https://www.googleapis.com/calendar/v3/calendars/" + 
+        calendarId + "/events?key=" + apiKey;
 
     /**
      * Add a zero to the number (represented as a string) if single digit.
@@ -20,91 +21,37 @@ var acmCalendar = (function (calendarId, apiKey) {
     };
 
     /**
-     * Parses a datetime formatted string and constructs a new Date object
-     * from the string.
+     * Constructs the provided time with AM/PM.
      *
-     * @param dateTimeString A string formatted as YYYY-MM-DDThh:mm:ssTZD
+     * @param dateTimeString The datetime formatted as a string
      *
-     * @return The Date object
+     * @return The string representing the time with AM/PM
      */
-    var getDateTimeFromString = function (dateTimeString) {
-        var m = dateTimeString.match(/(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)/);
-        return new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], 0);
-    };
+    var getTimeWithMeridiem = function (dateTimeString) {
+        var dt = acmDateTime();
+        var dateTime = dt.getDateTimeFromString(dateTimeString);
+        var timeString = "";
 
-    /**
-     * Yanks the year from the datetime formatted string.
-     *
-     * @param dateTimeString A string formatted as YYYY-MM-DDThh:mm:ssTZD
-     *
-     * @return The year as a string
-     */
-    var getYearFromDateTimeString = function (dateTimeString) {
-        var year = padNumber(getDateTimeFromString(dateTimeString).getFullYear());
-
-        return year;
-    };
-
-    /**
-     * Yanks the month from the datetime formatted string.
-     *
-     * @param dateTimeString A string formatted as YYYY-MM-DDThh:mm:ssTZD
-     *
-     * @return The month as a string
-     */
-    var getMonthFromDateTimeString = function (dateTimeString) {
-        var month = padNumber(getDateTimeFromString(dateTimeString).getMonth() + 1);
-
-        return month;
-    };
-
-    /**
-     * Yanks the day from the datetime formatted string.
-     *
-     * @param dateTimeString A string formatted as YYYY-MM-DDThh:mm:ssTZD
-     *
-     * @return The day as a string
-     */
-    var getDayFromDateTimeString = function (dateTimeString) {
-        var day = padNumber(getDateTimeFromString(dateTimeString).getDate());
-
-        return day;
-    };
-
-    /**
-     * Determines the datetime formatted representation of the current time.
-     *
-     * @return A string formatted as YYYY-MM-DDThh:mm:ssTZD
-     */
-    var getCurrentDateTimeAsString = function () {
-        var now = new Date();
-        var year = now.getFullYear(), month = now.getMonth(), day = now.getDate(),
-            hour = now.getHours(), minute = now.getMinutes(), second = now.getSeconds(),
-            tzd = now.getTimezoneOffset();
-
-        year = "" + year;
-
-        month = padNumber(month+1);
-        day = padNumber(day);
-        hour = padNumber(hour);
-        minute = padNumber(minute);
-        second = padNumber(second);
-
-        (function () {
-            var tzdSign = "";
-            if (tzd < 0) {
-                tzdSign = "-";
+        var hour = dateTime.getHours();
+        var minute = dateTime.getMinutes();
+        if (hour < 12) {
+            if (hour === 0) {
+                hour = 12;
             } else {
-                tzdSign = "+";
+                timeString += padNumber(hour);
             }
 
-            var tzdHour = padNumber(Math.abs(tzd / 60));
-            tzd = tzdSign + tzdHour + ":00";
-        })();
+            timeString += ":" + padNumber(minute) + " AM";
+        } else {
+            if (hour !== 12) {
+                hour -= 12;
+            }
 
+            timeString += padNumber(hour) + ":" + 
+                padNumber(minute) + " PM";
+        }
 
-        return "" + year + "-" + month + "-" + day + "T" +
-            hour + ":" + minute + ":" + second + tzd;
+        return timeString;
     };
 
     /**
@@ -142,8 +89,10 @@ var acmCalendar = (function (calendarId, apiKey) {
          *     future events as an array argument
          */
         getFutureEvents: function(maxEvents, callback) {
+            var dt = acmDateTime();
+
             var futureEventsUrl = restUrl + "&timeMin=" + 
-                encodeURIComponent(getCurrentDateTimeAsString());
+                encodeURIComponent(dt.getCurrentDateTimeAsString());
 
             if (maxEvents > 0) {
                 futureEventsUrl += "&singleEvents=true" +
@@ -166,7 +115,8 @@ var acmCalendar = (function (calendarId, apiKey) {
                                 var futureEvent = futureEvents[i];
                                 var summary = futureEvent.summary,
                                     location = futureEvent.location,
-                                    dateTime = futureEvent.start.dateTime;
+                                    dateStart = futureEvent.start.dateTime,
+                                    dateEnd = futureEvent.end.dateTime;
 
                                 if (!summary) {
                                     futureEvent.summary = "";
@@ -176,14 +126,25 @@ var acmCalendar = (function (calendarId, apiKey) {
                                     futureEvent.location = "";
                                 }
 
-                                if (!dateTime) {
-                                    futureEvent.dateTime = "";
+                                if (!dateStart) {
+                                    futureEvent.date = "";
+                                    futureEvent.startTime = "";
                                 } else {
-                                    futureEvent.dateTime = 
-                                        getYearFromDateTimeString(dateTime) + "/" +
-                                        getMonthFromDateTimeString(dateTime) + "/" +
-                                        getDayFromDateTimeString(dateTime);
+                                    futureEvent.date = 
+                                        dt.getYearFromDateTimeString(dateStart) + "/" +
+                                        dt.getMonthFromDateTimeString(dateStart) + "/" +
+                                        dt.getDayFromDateTimeString(dateStart);
+                                    futureEvent.startTime = 
+                                        getTimeWithMeridiem(dateStart);
                                 }
+
+                                if (!dateEnd) {
+                                    futureEvent.endTime = "";
+                                } else {
+                                    futureEvent.endTime = 
+                                        getTimeWithMeridiem(dateEnd);
+                                }
+
                             } catch (ex) {
                                 continue;
                             }
