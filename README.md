@@ -1,4 +1,4 @@
-acm
-===
+# Your [DocPad](http://docpad.org) Project
 
-The website for Virginia Tech's ACM.
+## License
+Copyright &copy; 2013+ All rights reserved.

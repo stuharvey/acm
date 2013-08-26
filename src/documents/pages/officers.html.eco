@@ -1,0 +1,17 @@
+---
+title: Officers
+layout: default
+tags: ['page', 'officers']
+pageOrder: 4
+---
+
+<% for role, officer of @officers: %>
+    <div class="officer">
+            <h2><%= role %> - <a href="mailto:<%= officer.email %>"><%= officer.name %></a></h2>
+            <img src="<%= officer.picture %>" 
+                 alt="<%= officer.name %>"
+                 title="<%= officer.name %>">
+            <p class="bio"><%= officer.bio %></p>
+    </div>
+<% end %>
+

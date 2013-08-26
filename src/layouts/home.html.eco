@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<article class="content post">
+    <!-- HTML5 tag for the title of the article -->
+    <header>
+        <h2><a href="#" title="<%= @document.title %>"><%= @document.title %></a></h2>
+    </header>
+
+    <!-- The content of the article -->
+    <content>
+        <%- @content %>
+    </content>
+
+</article>
+
+<!-- Display most recent news article -->
+<% for recent in @getCollection("posts").toJSON()[0..2]: %>
+    <article class="content post">
+        <!-- HTML5 tag for the title of the article -->
+        <header>
+            <h2><a href="#" title="<%= recent.title %>"><%= recent.title %></a></h2>
+        </header>
+
+        <!-- The content of the article -->
+        <content>
+            <%- recent.contentRenderedWithoutLayouts %>
+        </content>
+
+    </article>
+<% end %>
+

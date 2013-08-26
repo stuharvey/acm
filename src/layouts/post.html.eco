@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="content post">
+    <!-- HTML5 tag for the title of the article -->
+    <header>
+        <h2><a href="#" title="<% @document.title %>"><%= @document.title %></a></h2>
+    </header>
+
+    <!-- Used for SEO purposes inside the article -->
+    <footer>
+        <p class="post-info">This post was written by <%= @document.author %></p>
+    </footer>
+
+    <!-- The content of the article -->
+    <content>
+        <%- @content %>
+    </content>
+</article>
+
