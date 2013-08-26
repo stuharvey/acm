@@ -21,44 +21,50 @@ docpadConfig = {
         //
         officers: {
 
-            "President" : {
+            president : {
                 name: "Chip Senkbeil",
+                role: "President",
                 email: "rcsvt@vt.edu",
                 picture: "/images/officers/chip_senkbeil.jpg",
                 bio: "\"To me programming is more than an important practical art. It is also a gigantic undertaking in the foundations of knowledge.\" ~Grace Hopper"
             },
 
-            "Vice President" : {
+            vice_president : {
                 name: "Zack Morris",
+                role: "Vice President",
                 email: "zackmorris@vt.edu",
-                picture: "/images/officers/officer_placeholder.jpg",
-                bio: ""
+                picture: "/images/officers/zack_morris.png",
+                bio: "I am a senior majoring in computer science and mathematics. You can find me loitering around the CS lounge with Chip."
             },
 
-            "Treasurer" : {
+            treasurer : {
                 name: "Hasan Afzal",
+                role: "Treasurer",
                 email: "hasan91@vt.edu",
                 picture: "/images/officers/hasan_afzal.jpg",
                 bio: ""
 
             },
 
-            "Secretary" : {
+            secretary : {
                 name: "",
+                role: "Secretary",
                 email: "",
                 picture: "/images/officers/officer_placeholder.jpg",
                 bio: "Seeking new student!"
             },
 
-            "Event Coordinator" : {
+            event_coordinator : {
                 name: "",
+                role: "Event Coordinator",
                 email: "",
                 picture: "/images/officers/officer_placeholder.jpg",
                 bio: "Seeking new student!"
             },
 
-            "Webmaster" : {
+            webmaster : {
                 name: "Chip Senkbeil",
+                role: "Webmaster",
                 email: "rcsvt@vt.edu",
                 picture: "/images/officers/chip_senkbeil.jpg",
                 bio: "Seeking replacement!"

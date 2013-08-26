@@ -5,9 +5,9 @@ tags: ['page', 'officers']
 pageOrder: 4
 ---
 
-<% for role, officer of @officers: %>
+<% for type, officer of @officers: %>
     <div class="officer">
-            <h2><%= role %> - <a href="mailto:<%= officer.email %>"><%= officer.name %></a></h2>
+            <h2><%= officer.role %> - <a href="mailto:<%= officer.email %>"><%= officer.name %></a></h2>
             <img src="<%= officer.picture %>" 
                  alt="<%= officer.name %>"
                  title="<%= officer.name %>">

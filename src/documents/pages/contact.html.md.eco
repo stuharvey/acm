@@ -1,0 +1,17 @@
+---
+title: Contact
+layout: contact
+tags: ['page', 'contact']
+pageOrder: 6
+---
+
+For questions regarding the organization, please contact one of the following:
+
+* President, <%= @officers.president.name %>, at <%= @officers.president.email %>
+* Vice President, <%= @officers.vice_president.name %>, at
+<%= @officers.vice_president.email %>
+
+For web-related issues, please contact our webmaster:
+
+* <%= @officers.webmaster.name %>, at <%= @officers.webmaster.email %>
+
