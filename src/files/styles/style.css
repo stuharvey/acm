@@ -280,11 +280,13 @@ a {
     }
 
     .header.main aside {
-        display: none;
+        //display: none;
+        width: 100%;
     }
 
     .header.main div img {
-        width: 100%;
+        //width: 100%;
+        display: none;
     }
 
     .header.main nav {
