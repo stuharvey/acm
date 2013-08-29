@@ -6,3 +6,6 @@ Session.vim
 
 node_modules/
 out/
+
+update.sh
+

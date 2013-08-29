@@ -3,6 +3,7 @@ title: First Meeting Fall 2013
 layout: post
 tags: ['post', 'meeting']
 author: "Chip Senkbeil"
+date: August 26, 2013 11:55 PM
 ```
 
 Welcome back to Virginia Tech for the fall of 2013! I am pleased to announce

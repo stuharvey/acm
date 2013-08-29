@@ -42,7 +42,7 @@ docpadConfig = {
                 role: "Treasurer",
                 email: "hasan91@vt.edu",
                 picture: "/images/officers/hasan_afzal.jpg",
-                bio: ""
+                bio: "I am a Senior majoring in Computer Science and graduating in May 2014. I am originally from Richmond, VA and have interned at Amazon and Genworth Financial."
 
             },
 
