@@ -30,7 +30,11 @@
         <meta name="author" content="<%= @site.author or '' %>" />
 
         <!-- Output DocPad produced meta elements -->
-	    <%- @getBlock('meta').toHTML() %>
+        <%- @getBlock('meta').toHTML() %>
+
+        <!-- Font awesome link -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" 
+              rel="stylesheet">
 
         <!-- Load all styles -->
         <%- @getBlock('styles').add(@site.styles).toHTML() %>
@@ -79,6 +83,12 @@
                 logo created by 
                 <a href="http://gwensketches.blogspot.com/">
                     Gwen Sewell
+                </a> |
+                <a href="https://www.facebook.com/vtech.acm">
+                    <i class="icon-facebook-sign"></i>
+                </a>
+                <a href="https://twitter.com/vtacm">
+                    <i class="icon-twitter-sign"></i>
                 </a>
             </p>
         </footer>
