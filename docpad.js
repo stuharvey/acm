@@ -47,11 +47,11 @@ docpadConfig = {
             },
 
             secretary : {
-                name: "",
+                name: "Suhas Patel",
                 role: "Secretary",
                 email: "",
                 picture: "/images/officers/officer_placeholder.jpg",
-                bio: "Seeking new student!"
+                bio: ""
             },
 
             event_coordinator : {
