@@ -9,7 +9,4 @@ This page will be updated the current information regarding ACM's Web Developmen
 
 We are currently accepting responses in order to determine the best day and time for weekly meetings.
 
-The form is available at:
-
-
-https://docs.google.com/a/vt.edu/forms/d/lt3sTA2p5Fmb5cTcqItxOp5oY8ypI4Dw2fGINwaegqVZs/viewform
+The form is available [here](https://docs.google.com/a/vt.edu/forms/d/1t3sTA2p5Fmb5cTcqItxOp5oY8ypI4Dw2fGINwaeqVZs/viewform).
