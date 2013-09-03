@@ -12,5 +12,8 @@ Registration for the OpenStack seminar is now open! Please remember that it is
 a four day event (Monday through Thursday) starting on September 30th and
 concluding on October 3rd.
 
+*If you are looking for the computer science option regarding the department, it
+is listed as "Electrical Engineering & Computer Science."*
+
 [Rackspace OpenStack Seminar Registration](http://goo.gl/52FrH9)
 
