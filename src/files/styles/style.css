@@ -101,20 +101,20 @@ a {
     color: #FFFFFF;
 }
 
-.header.main aside ul li a:hover, 
+.header.main aside ul li a:hover,
 .header.main aside ul li a:active
 {
     color: #666666;
     text-shadow: none;
 }
-    
+
 .header.main aside ul li a span {
     color: #888888;
 }
 
 .header.main nav {
     background-color: #660000; /* VT Maroon */
-    height: 80px;
+    height: 40px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -140,7 +140,7 @@ a {
     height: 20px;
 }
 
-.header.main nav a:hover, .header.main nav a:active, 
+.header.main nav a:hover, .header.main nav a:active,
 .header.main nav .active a:link, .header.main nav .active a:visited {
     background-color: #FF6600;
     text-shadow: none;
@@ -231,7 +231,7 @@ a {
 }
 
 .content.post a:link, a:visited {
-    color: #FF6600;    
+    color: #FF6600;
 }
 
 .content.post a:hover, a:active {

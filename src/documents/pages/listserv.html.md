@@ -1,8 +1,8 @@
 ---
-title: ACM Listserv
+title: Listserv
 layout: listserv
 tags: ['page', 'listserv']
-pageOrder: 6
+pageOrder: 5
 ---
 We use our listserv (ACM@listserv.vt.edu) to send out messages as well as posting them on our website.
 In order to subscribe to our listserv, follow these steps:
